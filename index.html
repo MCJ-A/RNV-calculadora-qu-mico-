@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Control de Químicos (1000L)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="top-bar">
+      <select id="selectorIdioma" aria-label="Seleccionar idioma">
+        <option value="es">Español</option>
+        <option value="pt">Português</option>
+        <option value="en">English (US)</option>
+      </select>
+    </div>
+
+    <h2 id="titulo">Control de Químicos (1000L)</h2>
+
+    <label for="quimico" id="lblQuimico">Químico:</label>
+    <select id="quimico">
+      <option value="PVOH">PVOH</option>
+      <option value="Adhesivo">Adhesivo</option>
+      <option value="MAP">MAP</option>
+      <option value="Release">Release</option>
+    </select>
+
+    <label for="flujo" id="lblFlujo">Flujo de bomba (ml/min):</label>
+    <input type="number" id="flujo" min="0" required />
+
+    <label for="nivel" id="lblNivel">Nivel actual del tanque (Litros):</label>
+    <input type="number" id="nivel" min="0" required />
+
+    <label for="horas" id="lblHoras">Horas restantes del turno:</label>
+    <input type="number" id="horas" min="0" step="0.5" required />
+
+    <button id="btnCalcular">Calcular Autonomía</button>
+
+    <div id="cajaResultado" class="resultado hidden">
+      <h3 id="mensajeAlerta"></h3>
+      <p>
+        <span id="txtGasto">Gasto por hora:</span>
+        <span id="resGastoHora" class="dato-resaltado"></span>
+        <span id="txtLitrosHora">L/h</span>
+      </p>
+      <p>
+        <span id="txtConsumo">Consumo hasta fin de turno:</span>
+        <span id="resConsumoTurno" class="dato-resaltado"></span>
+        <span id="txtLitros">Litros</span>
+      </p>
+      <p>
+        <span id="txtAutonomia">Autonomía total del tanque:</span>
+        <span id="resAutonomia" class="dato-resaltado"></span>
+        <span id="txtHoras">horas</span>
+      </p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
